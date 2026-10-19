@@ -1,4 +1,4 @@
-﻿# Déclarez sous cette ligne les images, avec l'instruction 'image'
+# Déclarez sous cette ligne les images, avec l'instruction 'image'
 image fond lycée = im.Scale("fond compus.jpg", 1920, 1080)
 image fond classe = im.Scale("fond amphi.jpg", 1920, 1080)
 image fond rue = im.Scale("fond rue animé.jpg", 1920, 1080)
@@ -5333,10 +5333,15 @@ pause 4.0
 hide text with dissolve
 pause 2.0
 
-# 5. Coupure du son et retour au menu principal
+# 5. Coupure du son et transition vers la suite
 stop music fadeout 3.0
 scene black with fade
-$ MainMenu(confirm=False)()
+
+menu:
+    "Lancer la suite : Acte 2 (L'Émancipation)":
+        jump acte1_debut
+    "Retourner au menu principal":
+        $ MainMenu(confirm=False)()
 
 
 # =====================================================================
